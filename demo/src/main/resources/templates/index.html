@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PreWare</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background: url("https://pixelz.cc/wp-content/uploads/2018/07/modern-data-center-uhd-4k-wallpaper.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            height: 90vh;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+
+
+                <div class="panel-heading">
+                    <strong>Login to PreWare Manager</strong>
+                </div>
+
+
+                <div class="panel-body">
+
+                    <form th:action="@{/auth/signin}" th:object="${loginTemplate}" method="post" class="form-signin form-horizontal">
+
+                        <strong><div class="alert alert-danger" th:if="${sessionError}" th:text="${sessionError}"></div></strong>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group input-group-md">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </span>
+                                    <input type="text" class="form-control" th:field="*{username}" th:disabled="${ieDisable}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group input-group-md">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-lock"></span>
+                                    </span>
+                                    <input type="password" class="form-control" th:field="*{password}" th:disabled="${ieDisable}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <!--<input type="submit" value="send"/>-->
+                                <button type="submit" class="btn btn-primary btn-block" th:disabled="${ieDisable}">
+                                    <span class="glyphicon glyphicon-log-in"></span> Sign In
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<script src="webjars/jquery/1.9.1/jquery.min.js"></script>-->
+<!--<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+
+</body>
+</html>

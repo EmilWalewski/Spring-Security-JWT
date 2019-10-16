@@ -1,0 +1,74 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>
+            <span class="glyphicon glyphicon-list"></span> Employees list
+        </strong>
+        <div class="pull-right">
+            <a href="javascript:void(0);" onclick="addForm();"><span class="glyphicon glyphicon-plus-sign"></span> Add employee</a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-bordered table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="emp : ${data}">
+                    <td th:text="${emp.name}"></td>
+                    <td th:text="${emp.surname}"></td>
+                    <td th:text="${emp.email}"></td>
+                    <td th:text="${emp.phoneNumber}"></td>
+                    <td><a href="javascript:void(0);" th:onclick="'editForm(\'' + ${emp.getUser().getUserID()} + '\');'"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="javascript:void(0);" th:onclick="'deleteForm(\'' + ${emp.id} + '\');'"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ul class="nav nav-pills">
+            <!--<li class="nav-item" th:each="i : ${#numbers.sequence(0,data.totalPages-1)}">-->
+            <!--<a th:href="@{/(page=${i})}" th:text="${i+1}" th:classappend="${currentPage}==${i}?active:''" class="nav-link"></a>-->
+            <!--</li>-->
+        </ul>
+    </div>
+</div>
+    <!--<div class="myForm">-->
+        <!--<form th:action="@{/save}" method="post">-->
+        <!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+            <!--<div class="modal-dialog" role="document">-->
+                <!--<div class="modal-content">-->
+                    <!--<div class="modal-header">-->
+                        <!--<h5 class="modal-title" id="exampleModalLabel">Credentials</h5>-->
+                        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                            <!--<span aria-hidden="true">&times;</span>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                    <!--<div class="modal-body">-->
+                            <!--<div class="form-group">-->
+                                <!--<label for="username" class="col-form-label">Username:</label>-->
+                                <!--<input type="text" class="form-control" id="username" name="username">-->
+                            <!--</div>-->
+                            <!--<div class="form-group">-->
+                                <!--<label for="password" class="col-form-label">Password:</label>-->
+                                <!--<input type="text" class="form-control" id="password" name="password">-->
+                            <!--</div>-->
+
+                    <!--</div>-->
+                    <!--<div class="modal-footer">-->
+                        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                        <!--<input type="submit" class="btn btn-primary saveCreateButton" value="save">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--</form>-->
+    <!--</div>-->
+

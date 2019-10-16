@@ -1,0 +1,54 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>
+            <span class="glyphicon glyphicon-plus-sign"></span> New user
+        </strong>
+    </div>
+
+    <form th:action="${edited}? @{/editEmployee}:@{/addEmployee}" th:object="${employeeForm}" method="post" class="form-signin form-horizontal" id="submitEmployeeForm">
+        <div class="panel-body">
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">Name:</label>
+                <div class="col-md-6">
+                    <input class="form-control" th:field="*{name}" th:value="*{name} != null ? *{name} : ''" required="true"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">Surname:</label>
+                <div class="col-md-6">
+                    <input class="form-control" th:field="*{surname}" th:value="*{surname} != null ? *{surname} : ''"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">E-mail:</label>
+                <div class="col-md-6">
+                    <input class="form-control" th:field="*{email}" th:value="*{email} != null ? *{email} : ''"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">Phone number:</label>
+                <div class="col-md-6">
+                    <input class="form-control" th:field="*{phoneNumber}" th:value="*{phoneNumber} != null ? *{phoneNumber} : ''"/>
+                </div>
+            </div>
+         </div>
+
+        <div class="panel-footer" style="display:flex; justify-content: flex-end;">
+
+            <button type="submit" class="btn btn-primary btn-xs" style="margin-right: 6px;">
+                <span class="glyphicon glyphicon-floppy-disk"></span> Save
+            </button>
+                <button type="button" class="btn btn-danger btn-xs">
+                    <span class="glyphicon glyphicon-remove"></span> Cancel
+                </button>
+            </div>
+    </form>
+
+    <script type="text/javascript" src="/emp.js"></script>
+
+</div>
