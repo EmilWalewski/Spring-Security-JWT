@@ -4,6 +4,7 @@ Implemented:
 - UsernamePasswordAuthenticationFilter
 - BasicAuthenticationFilter
 - CORS
+- OncePerRequestFilter 
 
 
 
