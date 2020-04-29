@@ -1,2 +1,9 @@
-# uselessDemo
-spring security testing demo
+# SpringBoot + JWT testing demo
+
+Implemented:
+- UsernamePasswordAuthenticationFilter
+- BasicAuthenticationFilter
+- CORS
+
+
+
